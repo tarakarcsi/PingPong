@@ -36,6 +36,8 @@
             this.Racket = new System.Windows.Forms.PictureBox();
             this.timer_movement = new System.Windows.Forms.Timer(this.components);
             this.GameOver = new System.Windows.Forms.Label();
+            this.Level_lbl = new System.Windows.Forms.Label();
+            this.LevelScore = new System.Windows.Forms.Label();
             this.Playground.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Ball)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Racket)).BeginInit();
@@ -43,6 +45,8 @@
             // 
             // Playground
             // 
+            this.Playground.Controls.Add(this.LevelScore);
+            this.Playground.Controls.Add(this.Level_lbl);
             this.Playground.Controls.Add(this.GameOver);
             this.Playground.Controls.Add(this.Points);
             this.Playground.Controls.Add(this.Score);
@@ -109,6 +113,24 @@
             this.GameOver.Text = "NOOB!\r\n\r\nF1 - Restart\r\n\r\nEscape - Exit\r\n";
             this.GameOver.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // Level_lbl
+            // 
+            this.Level_lbl.AutoSize = true;
+            this.Level_lbl.Location = new System.Drawing.Point(663, 4);
+            this.Level_lbl.Name = "Level_lbl";
+            this.Level_lbl.Size = new System.Drawing.Size(50, 21);
+            this.Level_lbl.TabIndex = 5;
+            this.Level_lbl.Text = "Level:";
+            // 
+            // LevelScore
+            // 
+            this.LevelScore.AutoSize = true;
+            this.LevelScore.Location = new System.Drawing.Point(708, 4);
+            this.LevelScore.Name = "LevelScore";
+            this.LevelScore.Size = new System.Drawing.Size(19, 21);
+            this.LevelScore.TabIndex = 6;
+            this.LevelScore.Text = "0";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -136,6 +158,8 @@
         private System.Windows.Forms.Label Score;
         private System.Windows.Forms.Label Points;
         private System.Windows.Forms.Label GameOver;
+        private System.Windows.Forms.Label LevelScore;
+        private System.Windows.Forms.Label Level_lbl;
     }
 }
 

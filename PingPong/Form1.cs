@@ -15,6 +15,7 @@ namespace PingPong
         public int speed_left = 4;
         public int speed_top = 4;
         public int points = 0;
+        public int level = 0;
 
         public Form1()
         {
@@ -51,6 +52,8 @@ namespace PingPong
                 speed_top = -speed_top;
                 points += 1;
                 Points.Text = points.ToString();
+                level = points / 3;
+                LevelScore.Text = level.ToString();
             }
 
             if(Ball.Left <= Playground.Left)
