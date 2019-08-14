@@ -34,6 +34,7 @@
             this.timer_movement = new System.Windows.Forms.Timer(this.components);
             this.Ball = new System.Windows.Forms.PictureBox();
             this.Score = new System.Windows.Forms.Label();
+            this.Points = new System.Windows.Forms.Label();
             this.Playground.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Racket)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ball)).BeginInit();
@@ -41,6 +42,7 @@
             // 
             // Playground
             // 
+            this.Playground.Controls.Add(this.Points);
             this.Playground.Controls.Add(this.Score);
             this.Playground.Controls.Add(this.Ball);
             this.Playground.Controls.Add(this.Racket);
@@ -84,6 +86,15 @@
             this.Score.TabIndex = 2;
             this.Score.Text = "Score:";
             // 
+            // Points
+            // 
+            this.Points.AutoSize = true;
+            this.Points.Location = new System.Drawing.Point(72, 4);
+            this.Points.Name = "Points";
+            this.Points.Size = new System.Drawing.Size(19, 21);
+            this.Points.TabIndex = 3;
+            this.Points.Text = "0";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -108,6 +119,7 @@
         private System.Windows.Forms.Timer timer_movement;
         private System.Windows.Forms.PictureBox Ball;
         private System.Windows.Forms.Label Score;
+        private System.Windows.Forms.Label Points;
     }
 }
 

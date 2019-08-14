@@ -14,7 +14,7 @@ namespace PingPong
     {
         public int speed_left = 4;
         public int speed_top = 4;
-        public int point = 0;
+        public int points = 0;
 
         public Form1()
         {
@@ -43,7 +43,7 @@ namespace PingPong
                 speed_top += 2;
                 speed_left += 2;
                 speed_top = -speed_top;
-                point += 1;
+                points += 1;
             }
 
             if(Ball.Left <= Playground.Left)
