@@ -30,18 +30,20 @@
         {
             this.components = new System.ComponentModel.Container();
             this.Playground = new System.Windows.Forms.Panel();
+            this.Points = new System.Windows.Forms.Label();
+            this.Score = new System.Windows.Forms.Label();
+            this.Ball = new System.Windows.Forms.PictureBox();
             this.Racket = new System.Windows.Forms.PictureBox();
             this.timer_movement = new System.Windows.Forms.Timer(this.components);
-            this.Ball = new System.Windows.Forms.PictureBox();
-            this.Score = new System.Windows.Forms.Label();
-            this.Points = new System.Windows.Forms.Label();
+            this.GameOver = new System.Windows.Forms.Label();
             this.Playground.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Racket)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ball)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Racket)).BeginInit();
             this.SuspendLayout();
             // 
             // Playground
             // 
+            this.Playground.Controls.Add(this.GameOver);
             this.Playground.Controls.Add(this.Points);
             this.Playground.Controls.Add(this.Score);
             this.Playground.Controls.Add(this.Ball);
@@ -50,9 +52,36 @@
             this.Playground.Font = new System.Drawing.Font("Calibri", 12.25F);
             this.Playground.Location = new System.Drawing.Point(0, 0);
             this.Playground.Name = "Playground";
-            this.Playground.Size = new System.Drawing.Size(800, 450);
+            this.Playground.Size = new System.Drawing.Size(800, 440);
             this.Playground.TabIndex = 0;
             this.Playground.Paint += new System.Windows.Forms.PaintEventHandler(this.Playground_Paint);
+            // 
+            // Points
+            // 
+            this.Points.AutoSize = true;
+            this.Points.Location = new System.Drawing.Point(72, 4);
+            this.Points.Name = "Points";
+            this.Points.Size = new System.Drawing.Size(19, 21);
+            this.Points.TabIndex = 3;
+            this.Points.Text = "0";
+            // 
+            // Score
+            // 
+            this.Score.AutoSize = true;
+            this.Score.Location = new System.Drawing.Point(23, 4);
+            this.Score.Name = "Score";
+            this.Score.Size = new System.Drawing.Size(53, 21);
+            this.Score.TabIndex = 2;
+            this.Score.Text = "Score:";
+            // 
+            // Ball
+            // 
+            this.Ball.BackColor = System.Drawing.SystemColors.Desktop;
+            this.Ball.Location = new System.Drawing.Point(409, 222);
+            this.Ball.Name = "Ball";
+            this.Ball.Size = new System.Drawing.Size(25, 25);
+            this.Ball.TabIndex = 1;
+            this.Ball.TabStop = false;
             // 
             // Racket
             // 
@@ -68,46 +97,32 @@
             this.timer_movement.Interval = 1;
             this.timer_movement.Tick += new System.EventHandler(this.timer_movement_Tick);
             // 
-            // Ball
+            // GameOver
             // 
-            this.Ball.BackColor = System.Drawing.SystemColors.Desktop;
-            this.Ball.Location = new System.Drawing.Point(409, 222);
-            this.Ball.Name = "Ball";
-            this.Ball.Size = new System.Drawing.Size(25, 25);
-            this.Ball.TabIndex = 1;
-            this.Ball.TabStop = false;
-            // 
-            // Score
-            // 
-            this.Score.AutoSize = true;
-            this.Score.Location = new System.Drawing.Point(23, 4);
-            this.Score.Name = "Score";
-            this.Score.Size = new System.Drawing.Size(53, 21);
-            this.Score.TabIndex = 2;
-            this.Score.Text = "Score:";
-            // 
-            // Points
-            // 
-            this.Points.AutoSize = true;
-            this.Points.Location = new System.Drawing.Point(72, 4);
-            this.Points.Name = "Points";
-            this.Points.Size = new System.Drawing.Size(19, 21);
-            this.Points.TabIndex = 3;
-            this.Points.Text = "0";
+            this.GameOver.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.GameOver.AutoSize = true;
+            this.GameOver.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.GameOver.Location = new System.Drawing.Point(493, 117);
+            this.GameOver.Name = "GameOver";
+            this.GameOver.Size = new System.Drawing.Size(117, 130);
+            this.GameOver.TabIndex = 4;
+            this.GameOver.Text = "NOOB!\r\n\r\nF1 - Restart\r\n\r\nEscape - Exit\r\n";
+            this.GameOver.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 440);
             this.Controls.Add(this.Playground);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.Playground.ResumeLayout(false);
             this.Playground.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Racket)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ball)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Racket)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -120,6 +135,7 @@
         private System.Windows.Forms.PictureBox Ball;
         private System.Windows.Forms.Label Score;
         private System.Windows.Forms.Label Points;
+        private System.Windows.Forms.Label GameOver;
     }
 }
 

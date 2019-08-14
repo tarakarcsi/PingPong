@@ -28,6 +28,12 @@ namespace PingPong
 
 
             Racket.Top = Playground.Bottom - (Playground.Bottom / 10);
+
+            GameOver.Left = (Playground.Width / 2) - (GameOver.Width / 2);
+            GameOver.Top = (Playground.Height / 2) - (GameOver.Height / 2);
+
+            GameOver.Visible = false;
+            
         }
 
         private void timer_movement_Tick(object sender, EventArgs e)
@@ -44,6 +50,7 @@ namespace PingPong
                 speed_left += 2;
                 speed_top = -speed_top;
                 points += 1;
+                Points.Text = points.ToString();
             }
 
             if(Ball.Left <= Playground.Left)
@@ -64,6 +71,7 @@ namespace PingPong
             if(Ball.Bottom >= Playground.Bottom)
             {
                 timer_movement.Enabled = false;
+                GameOver.Visible = true;
             }
         }
         public Boolean Collision_Left(PictureBox obj)
@@ -95,6 +103,23 @@ namespace PingPong
             {
                 this.Close();
             }
+
+            if(e.KeyCode == Keys.F1)
+            {
+                Ball.Left = 50;
+                Ball.Top = 50;
+                speed_left = 4;
+                speed_top = 4;
+                points = 0;
+                Points.Text = "0";
+                timer_movement.Enabled = true;
+                GameOver.Visible = false;
+            }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
