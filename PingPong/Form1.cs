@@ -65,9 +65,10 @@ namespace PingPong
                 )
             {
                 Random r = new Random();
-                int position = r.Next(Playground.Left, Playground.Right);
-                GiftBox.Top = position;
-                GiftBox.Left = position;
+                int position_width = r.Next(0, Playground.Width);
+                int position_height = r.Next(0, Playground.Height - Ball.Height);
+                Point newPosition =  new Point(position_width, position_height);
+                GiftBox.Location = newPosition;
                 gifts += 1;
                 GiftScore.Text = gifts.ToString();
                 
