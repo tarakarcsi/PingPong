@@ -16,6 +16,7 @@ namespace PingPong
         public int speed_top = 4;
         public int points = 0;
         public int level = 0;
+        public int gifts = 0;
 
         public Form1()
         {
@@ -54,6 +55,22 @@ namespace PingPong
                 Points.Text = points.ToString();
                 level = points / 3;
                 LevelScore.Text = level.ToString();
+            }
+
+            //Collision gift-ball
+            if ((Ball.Bottom >= GiftBox.Top && Ball.Bottom <= GiftBox.Bottom && Ball.Left >= GiftBox.Left && Ball.Right <= GiftBox.Right) ||
+                (Ball.Top <= GiftBox.Bottom && Ball.Top >= GiftBox.Top && Ball.Left >= GiftBox.Left && Ball.Right <= GiftBox.Right) ||
+                (Ball.Left >= GiftBox.Right && Ball.Left <= GiftBox.Left && Ball.Bottom >= GiftBox.Bottom && Ball.Top <= GiftBox.Top) ||
+                (Ball.Right <= GiftBox.Left && Ball.Right >= GiftBox.Right && Ball.Top <= GiftBox.Top && Ball.Bottom >= GiftBox.Bottom)
+                )
+            {
+                Random r = new Random();
+                int position = r.Next(Playground.Left, Playground.Right);
+                GiftBox.Top = position;
+                GiftBox.Left = position;
+                gifts += 1;
+                GiftScore.Text = gifts.ToString();
+                
             }
 
             if(Ball.Left <= Playground.Left)

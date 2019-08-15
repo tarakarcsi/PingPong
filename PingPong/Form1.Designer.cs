@@ -30,21 +30,28 @@
         {
             this.components = new System.ComponentModel.Container();
             this.Playground = new System.Windows.Forms.Panel();
+            this.GiftScore = new System.Windows.Forms.Label();
+            this.Gifts_lbl = new System.Windows.Forms.Label();
+            this.GiftBox = new System.Windows.Forms.PictureBox();
+            this.LevelScore = new System.Windows.Forms.Label();
+            this.Level_lbl = new System.Windows.Forms.Label();
+            this.GameOver = new System.Windows.Forms.Label();
             this.Points = new System.Windows.Forms.Label();
             this.Score = new System.Windows.Forms.Label();
             this.Ball = new System.Windows.Forms.PictureBox();
             this.Racket = new System.Windows.Forms.PictureBox();
             this.timer_movement = new System.Windows.Forms.Timer(this.components);
-            this.GameOver = new System.Windows.Forms.Label();
-            this.Level_lbl = new System.Windows.Forms.Label();
-            this.LevelScore = new System.Windows.Forms.Label();
             this.Playground.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GiftBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ball)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Racket)).BeginInit();
             this.SuspendLayout();
             // 
             // Playground
             // 
+            this.Playground.Controls.Add(this.GiftScore);
+            this.Playground.Controls.Add(this.Gifts_lbl);
+            this.Playground.Controls.Add(this.GiftBox);
             this.Playground.Controls.Add(this.LevelScore);
             this.Playground.Controls.Add(this.Level_lbl);
             this.Playground.Controls.Add(this.GameOver);
@@ -59,6 +66,65 @@
             this.Playground.Size = new System.Drawing.Size(800, 440);
             this.Playground.TabIndex = 0;
             this.Playground.Paint += new System.Windows.Forms.PaintEventHandler(this.Playground_Paint);
+            // 
+            // GiftScore
+            // 
+            this.GiftScore.AutoSize = true;
+            this.GiftScore.ForeColor = System.Drawing.Color.Gold;
+            this.GiftScore.Location = new System.Drawing.Point(72, 25);
+            this.GiftScore.Name = "GiftScore";
+            this.GiftScore.Size = new System.Drawing.Size(19, 21);
+            this.GiftScore.TabIndex = 9;
+            this.GiftScore.Text = "0";
+            // 
+            // Gifts_lbl
+            // 
+            this.Gifts_lbl.AutoSize = true;
+            this.Gifts_lbl.ForeColor = System.Drawing.Color.Gold;
+            this.Gifts_lbl.Location = new System.Drawing.Point(24, 25);
+            this.Gifts_lbl.Name = "Gifts_lbl";
+            this.Gifts_lbl.Size = new System.Drawing.Size(51, 21);
+            this.Gifts_lbl.TabIndex = 8;
+            this.Gifts_lbl.Text = "Gifts: ";
+            // 
+            // GiftBox
+            // 
+            this.GiftBox.BackColor = System.Drawing.Color.Gold;
+            this.GiftBox.Location = new System.Drawing.Point(367, 57);
+            this.GiftBox.Name = "GiftBox";
+            this.GiftBox.Size = new System.Drawing.Size(120, 103);
+            this.GiftBox.TabIndex = 7;
+            this.GiftBox.TabStop = false;
+            // 
+            // LevelScore
+            // 
+            this.LevelScore.AutoSize = true;
+            this.LevelScore.Location = new System.Drawing.Point(708, 4);
+            this.LevelScore.Name = "LevelScore";
+            this.LevelScore.Size = new System.Drawing.Size(19, 21);
+            this.LevelScore.TabIndex = 6;
+            this.LevelScore.Text = "0";
+            // 
+            // Level_lbl
+            // 
+            this.Level_lbl.AutoSize = true;
+            this.Level_lbl.Location = new System.Drawing.Point(663, 4);
+            this.Level_lbl.Name = "Level_lbl";
+            this.Level_lbl.Size = new System.Drawing.Size(50, 21);
+            this.Level_lbl.TabIndex = 5;
+            this.Level_lbl.Text = "Level:";
+            // 
+            // GameOver
+            // 
+            this.GameOver.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.GameOver.AutoSize = true;
+            this.GameOver.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.GameOver.Location = new System.Drawing.Point(493, 117);
+            this.GameOver.Name = "GameOver";
+            this.GameOver.Size = new System.Drawing.Size(117, 130);
+            this.GameOver.TabIndex = 4;
+            this.GameOver.Text = "NOOB!\r\n\r\nF1 - Restart\r\n\r\nEscape - Exit\r\n";
+            this.GameOver.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Points
             // 
@@ -101,36 +167,6 @@
             this.timer_movement.Interval = 1;
             this.timer_movement.Tick += new System.EventHandler(this.timer_movement_Tick);
             // 
-            // GameOver
-            // 
-            this.GameOver.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.GameOver.AutoSize = true;
-            this.GameOver.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.GameOver.Location = new System.Drawing.Point(493, 117);
-            this.GameOver.Name = "GameOver";
-            this.GameOver.Size = new System.Drawing.Size(117, 130);
-            this.GameOver.TabIndex = 4;
-            this.GameOver.Text = "NOOB!\r\n\r\nF1 - Restart\r\n\r\nEscape - Exit\r\n";
-            this.GameOver.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // Level_lbl
-            // 
-            this.Level_lbl.AutoSize = true;
-            this.Level_lbl.Location = new System.Drawing.Point(663, 4);
-            this.Level_lbl.Name = "Level_lbl";
-            this.Level_lbl.Size = new System.Drawing.Size(50, 21);
-            this.Level_lbl.TabIndex = 5;
-            this.Level_lbl.Text = "Level:";
-            // 
-            // LevelScore
-            // 
-            this.LevelScore.AutoSize = true;
-            this.LevelScore.Location = new System.Drawing.Point(708, 4);
-            this.LevelScore.Name = "LevelScore";
-            this.LevelScore.Size = new System.Drawing.Size(19, 21);
-            this.LevelScore.TabIndex = 6;
-            this.LevelScore.Text = "0";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -143,6 +179,7 @@
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.Playground.ResumeLayout(false);
             this.Playground.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GiftBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ball)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Racket)).EndInit();
             this.ResumeLayout(false);
@@ -160,6 +197,9 @@
         private System.Windows.Forms.Label GameOver;
         private System.Windows.Forms.Label LevelScore;
         private System.Windows.Forms.Label Level_lbl;
+        private System.Windows.Forms.PictureBox GiftBox;
+        private System.Windows.Forms.Label GiftScore;
+        private System.Windows.Forms.Label Gifts_lbl;
     }
 }
 
