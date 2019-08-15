@@ -41,6 +41,7 @@
             this.Ball = new System.Windows.Forms.PictureBox();
             this.Racket = new System.Windows.Forms.PictureBox();
             this.timer_movement = new System.Windows.Forms.Timer(this.components);
+            this.Pause_lbl = new System.Windows.Forms.Label();
             this.Playground.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GiftBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ball)).BeginInit();
@@ -49,6 +50,7 @@
             // 
             // Playground
             // 
+            this.Playground.Controls.Add(this.Pause_lbl);
             this.Playground.Controls.Add(this.GiftScore);
             this.Playground.Controls.Add(this.Gifts_lbl);
             this.Playground.Controls.Add(this.GiftBox);
@@ -125,6 +127,7 @@
             this.GameOver.TabIndex = 4;
             this.GameOver.Text = "NOOB!\r\n\r\nF1 - Restart\r\n\r\nEscape - Exit\r\n";
             this.GameOver.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.GameOver.Click += new System.EventHandler(this.GameOver_Click);
             // 
             // Points
             // 
@@ -167,6 +170,18 @@
             this.timer_movement.Interval = 1;
             this.timer_movement.Tick += new System.EventHandler(this.timer_movement_Tick);
             // 
+            // Pause_lbl
+            // 
+            this.Pause_lbl.AutoSize = true;
+            this.Pause_lbl.Font = new System.Drawing.Font("Calibri", 15.25F);
+            this.Pause_lbl.Location = new System.Drawing.Point(144, 181);
+            this.Pause_lbl.Name = "Pause_lbl";
+            this.Pause_lbl.Size = new System.Drawing.Size(211, 52);
+            this.Pause_lbl.TabIndex = 10;
+            this.Pause_lbl.Text = "         Game Paused\r\nPress Enter to Continue";
+            this.Pause_lbl.Visible = false;
+            this.Pause_lbl.Click += new System.EventHandler(this.label1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -200,6 +215,7 @@
         private System.Windows.Forms.PictureBox GiftBox;
         private System.Windows.Forms.Label GiftScore;
         private System.Windows.Forms.Label Gifts_lbl;
+        private System.Windows.Forms.Label Pause_lbl;
     }
 }
 

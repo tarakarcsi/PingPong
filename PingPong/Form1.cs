@@ -27,6 +27,8 @@ namespace PingPong
             this.FormBorderStyle = FormBorderStyle.None;
             this.TopMost = true;
             this.Bounds = Screen.PrimaryScreen.Bounds;
+            Pause_lbl.Left = (Playground.Width/2) - (Pause_lbl.Width/2);
+            Pause_lbl.Top = (Playground.Height / 2) - (Pause_lbl.Height / 2);
 
 
             Racket.Top = Playground.Bottom - (Playground.Bottom / 10);
@@ -94,6 +96,8 @@ namespace PingPong
                 timer_movement.Enabled = false;
                 GameOver.Visible = true;
             }
+
+            
         }
         public Boolean Collision_Left(PictureBox obj)
         {
@@ -136,9 +140,33 @@ namespace PingPong
                 timer_movement.Enabled = true;
                 GameOver.Visible = false;
             }
+
+            if(e.KeyCode == Keys.Space)
+            {
+                speed_left = 0;
+                speed_top = 0;
+                Pause_lbl.Visible = true;
+            }
+
+            if(e.KeyCode == Keys.Enter)
+            {
+                Pause_lbl.Visible = false;
+                speed_top = 4;
+                speed_left = 4;
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void GameOver_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }
